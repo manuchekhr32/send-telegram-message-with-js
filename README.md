@@ -1,8 +1,8 @@
 # **Send Telegram message with JS**
 
 Connect Telegram BOT to your HTML code & send messages easily!\
-Telegram docs: https://core.telegram.org/bots/api#available-methods\
-My YouTube channel: https://youtube.com/manuchehr_programming\
+Telegram docs: https://core.telegram.org/bots/api#available-methods \
+My YouTube channel: https://youtube.com/manuchehr_programming \
 Developer: [Raupov Manuchehr](https://manuchehr.me)
 
 ----------
