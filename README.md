@@ -9,7 +9,7 @@ Developer: [Raupov Manuchehr](https://manuchehr.me)
 
 ## Getting started
 Firs of all connect app.js to your HTML file
-```Javascript
+```html
 <script src="https://ip9uk39kv26rml8wjjruzg-on.drv.tw/app.js"></script>
 ```
 ```HTML
