@@ -164,18 +164,7 @@ Other send methods are the same like that
 - **disableNotification**: BOOLEAN | optional | default: false
 
 ---
-## **Send a video | sendVideo()**
-```javascript 
-  sendVideo(video, caption, chatID, parseMode, disableNotification)
-```
 
-- **video**: STRING or InputFile ID | required | *any type of video
-- **caption**: STRING | optional
-- **chatID**: if you set **defaultChatID** chatID parameter is optional | STRING
-- **parseMode**: STRING | optional | aviable: 'markdown', 'html' | default: 'html'
-- **disableNotification**: BOOLEAN | optional | default: false
-
----
 ## **Send a contact | sendContact()**
 ```javascript 
   sendContact(phoneNumber, firstName, lastName, chatID, parseMode, disableNotification)
