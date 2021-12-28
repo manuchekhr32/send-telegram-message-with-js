@@ -25,7 +25,7 @@ class Bot extends TelegramBotSetup {
   }
 
   static start() {
-    console.log("Send telegram message with JS library\nDeveloped by Manuchehr Raupov\nPortfolio: https://manuchehr.me\nTelegram BOT docs & API's: https://core.telegram.org/bots/api#available-methods");
+    console.log("Send telegram message with JS library\nDeveloped by Manuchehr Raupov\nPortfolio: https://manuchehr.me\nDocs: https://github.com/manuchekhr32/send-telegram-message-with-js");
   }
 
   async getUpdates() {
