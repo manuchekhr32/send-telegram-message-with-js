@@ -10,7 +10,7 @@ Developer: [Raupov Manuchehr](https://manuchehr.me)
 ## Getting started
 Firs of all connect app.js to your HTML file
 ```html
-<script src="https://ip9uk39kv26rml8wjjruzg-on.drv.tw/app.js"></script>
+<script src="https://ip9uk39kv26rml8wjjruzg-on.drv.tw/jsbot.js"></script>
 ```
 ```HTML
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ Firs of all connect app.js to your HTML file
 <body>
   <!-- Your HTML file -->
 </body>
-<script src="https://ip9uk39kv26rml8wjjruzg-on.drv.tw/app.js"></script>
+<script src="https://ip9uk39kv26rml8wjjruzg-on.drv.tw/jsbot.js"></script>
 <script>
   // Your logic here. All functions returns Promise
   const bot = new Bot("110201543:AAHdqTcvCH1vGWJxfSeofSAs0K5PALDsaw", "123456789")
