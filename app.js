@@ -10,7 +10,7 @@ class TelegramBotSetup {
         method: method,
         body: body
       }).then(res => {
-        resolve(res)
+        resolve(res.json())
       }).catch(err => {
         reject(err)
       })
@@ -25,7 +25,7 @@ class Bot extends TelegramBotSetup {
   }
 
   static start() {
-    console.log("Send telegram message with JS library\nDeveloped by Manuchehr Raupov\nPortfolio: https://manuchehr.me\nDocs: https://github.com/manuchekhr32/send-telegram-message-with-js");
+    console.log("Send telegram message with JS\nDeveloper: https://manuchehr.me\nDocs: https://github.com/manuchekhr32/send-telegram-message-with-js");
   }
 
   async getUpdates() {
@@ -93,6 +93,25 @@ class Bot extends TelegramBotSetup {
     }
   }
 
+  async sendVoice(voice, caption, chatID, parseMode, disableNotification) {
+    try {
+      if (voice.startsWith('#')) {
+        const file = document.getElementById(voice.replace('#', ''));
+        const formData = new FormData();
+        formData.append("voice", file.files[0])
+        const result = await this.api(`/sendVoice?caption=${caption ? caption : ''}&chat_id=${chatID ? chatID : this.dcid}&parse_mode=${parseMode ? parseMode : 'html'}&disable_notification=${disableNotification ? disableNotification : false}`, 
+          'POST', formData)
+        return await result
+      }
+      else if (typeof voice === 'string') {
+        const result = await this.api(`/sendVoice?voice=${voice}&caption=${caption ? caption : ''}&chat_id=${chatID ? chatID : this.dcid}&parse_mode=${parseMode ? parseMode : 'html'}&disable_notification=${disableNotification ? disableNotification : false}`, 'GET')
+        return await result
+      }
+    } catch(e) {
+      return await e
+    }
+  }
+
   async sendVideo(video, caption, chatID, parseMode, disableNotification) {
     try {
       if (video.startsWith('#')) {
@@ -148,6 +167,7 @@ class Bot extends TelegramBotSetup {
       return await e
     }
   }
+
 }
 
 Bot.start()
