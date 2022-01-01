@@ -168,6 +168,19 @@ class Bot extends TelegramBotSetup {
     }
   }
 
+  async sendPoll(question, options, config, chatID, disableNotification) {
+    try {
+      let url = `/sendPoll?question=${question}&options=${JSON.stringify(options)}&chat_id=${chatID ? chatID : this.dcid}&disable_notification=${disableNotification ? disableNotification : false}`
+      for (let i in config) {
+        url += `&${i}=${config[i]}`
+      }
+      const result = await this.api(url, "GET")
+      return await result
+    } catch(e) {
+      return await e
+    }
+  }
+
 }
 
 Bot.start()

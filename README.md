@@ -152,6 +152,18 @@ Other send methods are the same like that
 - **disableNotification**: BOOLEAN | optional | default: false
 
 ---
+## **Send a voice | sendVoice()**
+```javascript 
+  sendVoice(voice, caption, chatID, parseMode, disableNotification)
+```
+
+- **voice**: STRING or InputFile ID | required | *any type of audio
+- **caption**: STRING | optional
+- **chatID**: if you set **defaultChatID** chatID parameter is optional | STRING
+- **parseMode**: STRING | optional | aviable: 'markdown', 'html' | default: 'html'
+- **disableNotification**: BOOLEAN | optional | default: false
+
+---
 ## **Send a video | sendVideo()**
 ```javascript 
   sendVideo(video, caption, chatID, parseMode, disableNotification)
@@ -206,3 +218,34 @@ For example:
     })
     .catch(err => console.log(err))
 ```
+
+---
+## **Send a Poll | sendPoll()**
+```javascript 
+  sendPoll(question, options, config, chatID, disableNotification)
+```
+
+- **question**: STRING | required
+- **options**: Array [] | required
+- **config**: Object {} | optional | *If you don't want to use this you have to skip with empty object {}* more information about aviable mehods: https://core.telegram.org/bots/api#sendpoll
+- **chatID**: if you set **defaultChatID** chatID parameter is optional | STRING
+- **disableNotification**: BOOLEAN | optional | default: false
+
+For example:
+```javascript 
+  bot.sendPoll("It's a poll question. Does it work?", 
+  ['Yes, works!', 'Nooo!', 'Another answer'],
+  {
+    "is_anonymous": true,
+    "type": 'quiz', //There are 2 types aviable: regular & quiz
+    "allows_multiple_answers": false, //If type is quiz, you can't allow multiple answers
+    "correct_option_id": 0, //If type is quiz, this is important! Index of options
+    // Visit https://core.telegram.org/bots/api#sendpoll for more information
+  })
+    .then(res => {
+      console.log("Success!", res);
+    })
+    .catch(err => console.log(err))
+```
+Result:\
+![image](assets/sc1.png)
